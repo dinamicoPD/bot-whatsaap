@@ -14,6 +14,7 @@
     "setup": "node setup-example.js",
     "setup:gemini": "node setup-gemini.js",
     "setup:whatsapp": "node setup-whatsapp-business.js",
+    "check:models": "node check-models.js",
     "verificar": "node verificar-deploy.js",
     "whatsapp:api": "node whatsapp-business-api.js"
   },

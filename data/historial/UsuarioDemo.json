@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2025-11-27T12:10:35.214Z",
+    "mensaje": "Hola",
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "timestamp": "2025-11-27T12:10:36.219Z",
+    "mensaje": "¿Precio por favor?",
+    "respuesta": "Para información de precios, por favor contacta a nuestro equipo."
+  },
+  {
+    "timestamp": "2025-11-27T12:10:37.231Z",
+    "mensaje": "Gracias",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T12:10:38.253Z",
+    "mensaje": "¿Horarios?",
+    "respuesta": "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00."
+  },
+  {
+    "timestamp": "2025-11-27T12:10:39.263Z",
+    "mensaje": "Adiós",
+    "respuesta": "¡Hasta luego! Que tengas un excelente día. 👋"
+  },
+  {
+    "timestamp": "2025-11-27T12:13:25.891Z",
+    "mensaje": "Hola",
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "timestamp": "2025-11-27T12:13:26.896Z",
+    "mensaje": "¿Precio por favor?",
+    "respuesta": "Para información de precios, por favor contacta a nuestro equipo."
+  },
+  {
+    "timestamp": "2025-11-27T12:13:27.903Z",
+    "mensaje": "Gracias",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T12:13:28.919Z",
+    "mensaje": "¿Horarios?",
+    "respuesta": "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00."
+  },
+  {
+    "timestamp": "2025-11-27T12:13:29.930Z",
+    "mensaje": "Adiós",
+    "respuesta": "¡Hasta luego! Que tengas un excelente día. 👋"
+  }
+]

@@ -1,6 +1,6 @@
 # 🤖 Bot de WhatsApp con IA
 
-Un bot de WhatsApp que responde automáticamente usando **Google Gemini** (gratuito).
+Un bot de WhatsApp que responde automáticamente usando **IA inteligente** con respuestas locales y opcionalmente Google Gemini.
 
 ## 🚀 Instalación y Configuración
 
@@ -9,23 +9,34 @@ Un bot de WhatsApp que responde automáticamente usando **Google Gemini** (gratu
 npm install
 ```
 
-### 2. Obtener API Key de Google Gemini
+### 2. Sistema de Respuestas Inteligentes (SIN API Key Requerida)
 
-#### Paso 1: Crear cuenta en Google AI Studio
-1. Ve a: https://makersuite.google.com/app/apikey
-2. Inicia sesión con tu cuenta de Google
-3. Haz clic en **"Create API Key"**
-4. Copia la clave generada (empieza con "AIza...")
+**¡Buenas noticias!** El bot funciona perfectamente **SIN necesidad de API keys externas**.
 
-#### Paso 2: Configurar variables de entorno
-- Copia `.env.example` a `.env`
-- Agrega tu clave: `GEMINI_API_KEY=tu_clave_de_google_aqui`
+#### 🎯 Sistema Inteligente Incluido:
 
-#### Paso 3: Probar la conexión
-```bash
-npm run test:gemini
-```
-Esto verificará que la API key funciona correctamente.
+**Respuestas Personalizadas:**
+- ✅ Saludos automáticos ("hola" → respuesta personalizada)
+- ✅ Despedidas inteligentes ("adiós" → respuesta adecuada)
+- ✅ Preguntas frecuentes ("precio", "horarios", etc.)
+- ✅ Configurables desde el panel web
+
+**Respuestas Locales Inteligentes:**
+- ✅ Análisis de palabras clave
+- ✅ Respuestas contextuales
+- ✅ Fallback automático
+- ✅ Actualización en tiempo real
+
+#### 🔧 Configuración Opcional de Google Gemini:
+
+Si quieres **respuestas más avanzadas con IA**:
+
+1. **Crear cuenta:** https://makersuite.google.com/app/apikey
+2. **Obtener API key** gratuita
+3. **Configurar:** `GEMINI_API_KEY=tu_clave_aqui`
+4. **Probar:** `npm run test:gemini`
+
+**Nota:** Gemini es **100% opcional**. El bot funciona perfectamente sin él.
 
 ### 3. Ejecutar el proyecto
 
@@ -330,10 +341,11 @@ docker run -p 3001:3001 \
 
 ## 📋 Requisitos
 
-- Node.js v18+
-- API Key de **Google Gemini** (gratuita)
-- API Key de **OpenAI** (opcional, para respaldo)
-- Cuenta en servicio de nube (Railway, Render, etc.)
+- ✅ **Node.js v18+**
+- ✅ **Internet** para el panel web
+- 🔧 **API Key de Google Gemini** (opcional, gratuita)
+- 🔧 **API Key de OpenAI** (opcional, para respaldo)
+- 🔧 **Cuenta en servicio de nube** (opcional, para despliegue)
 
 ## ⚠️ Notas Importantes
 

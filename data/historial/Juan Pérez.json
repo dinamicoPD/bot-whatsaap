@@ -1,0 +1,162 @@
+[
+  {
+    "timestamp": "2025-11-27T12:11:04.467Z",
+    "mensaje": "¿Horarios de atención?",
+    "respuesta": "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00."
+  },
+  {
+    "timestamp": "2025-11-27T12:13:53.793Z",
+    "mensaje": "Hasta luego",
+    "respuesta": "¡Hasta luego! Que tengas un excelente día. 😊"
+  },
+  {
+    "timestamp": "2025-11-27T12:14:37.386Z",
+    "mensaje": "Gracias por la información",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T12:14:59.531Z",
+    "mensaje": "Gracias por la información",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T12:15:06.384Z",
+    "mensaje": "Gracias por la información",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T12:17:55.698Z",
+    "mensaje": "¿Cuál es el precio?",
+    "respuesta": "Para información de precios, por favor contacta a nuestro equipo."
+  },
+  {
+    "timestamp": "2025-11-27T12:19:56.649Z",
+    "mensaje": "Buen día",
+    "respuesta": "¡Hola! Soy un asistente virtual. ¿En qué puedo ayudarte?"
+  },
+  {
+    "timestamp": "2025-11-27T12:21:33.410Z",
+    "mensaje": "Hola, ¿cómo estás?",
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "timestamp": "2025-11-27T12:25:35.298Z",
+    "mensaje": "Hola, ¿cómo estás?",
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "timestamp": "2025-11-27T12:29:13.026Z",
+    "mensaje": "Necesito ayuda",
+    "respuesta": "Estoy aquí para ayudarte. ¿Qué necesitas saber?"
+  },
+  {
+    "timestamp": "2025-11-27T12:32:02.332Z",
+    "mensaje": "Gracias por la información",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T12:35:40.029Z",
+    "mensaje": "¿Horarios de atención?",
+    "respuesta": "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00."
+  },
+  {
+    "timestamp": "2025-11-27T12:37:16.775Z",
+    "mensaje": "Hola, ¿cómo estás?",
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "timestamp": "2025-11-27T12:42:55.454Z",
+    "mensaje": "¿Horarios de atención?",
+    "respuesta": "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00."
+  },
+  {
+    "timestamp": "2025-11-27T12:46:08.986Z",
+    "mensaje": "Gracias por la información",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T12:53:00.212Z",
+    "mensaje": "Buen día",
+    "respuesta": "¡Hola! Soy un asistente virtual. ¿En qué puedo ayudarte?"
+  },
+  {
+    "timestamp": "2025-11-27T12:58:14.670Z",
+    "mensaje": "Gracias por la información",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T13:01:52.374Z",
+    "mensaje": "Hola, ¿cómo estás?",
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "timestamp": "2025-11-27T13:03:53.305Z",
+    "mensaje": "¿Qué servicios ofrecen?",
+    "respuesta": "¡Hola! Soy un asistente virtual. ¿En qué puedo ayudarte?"
+  },
+  {
+    "timestamp": "2025-11-27T13:14:46.474Z",
+    "mensaje": "¿Horarios de atención?",
+    "respuesta": "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00."
+  },
+  {
+    "timestamp": "2025-11-27T13:24:27.085Z",
+    "mensaje": "Gracias por la información",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T13:26:52.224Z",
+    "mensaje": "Hasta luego",
+    "respuesta": "¡Hasta luego! Que tengas un excelente día. 😊"
+  },
+  {
+    "timestamp": "2025-11-27T13:28:53.169Z",
+    "mensaje": "¿Horarios de atención?",
+    "respuesta": "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00."
+  },
+  {
+    "timestamp": "2025-11-27T13:30:05.747Z",
+    "mensaje": "Buen día",
+    "respuesta": "¡Hola! Soy un asistente virtual. ¿En qué puedo ayudarte?"
+  },
+  {
+    "timestamp": "2025-11-27T13:30:54.133Z",
+    "mensaje": "Buen día",
+    "respuesta": "¡Hola! Soy un asistente virtual. ¿En qué puedo ayudarte?"
+  },
+  {
+    "timestamp": "2025-11-27T13:32:30.882Z",
+    "mensaje": "¿Cuál es el precio?",
+    "respuesta": "Para información de precios, por favor contacta a nuestro equipo."
+  },
+  {
+    "timestamp": "2025-11-27T13:34:07.646Z",
+    "mensaje": "Gracias por la información",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T13:34:56.028Z",
+    "mensaje": "¿Cuál es el precio?",
+    "respuesta": "Para información de precios, por favor contacta a nuestro equipo."
+  },
+  {
+    "timestamp": "2025-11-27T13:39:22.119Z",
+    "mensaje": "¿Qué servicios ofrecen?",
+    "respuesta": "¡Hola! Soy un asistente virtual. ¿En qué puedo ayudarte?"
+  },
+  {
+    "timestamp": "2025-11-27T13:40:34.685Z",
+    "mensaje": "Gracias por la información",
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  {
+    "timestamp": "2025-11-27T13:40:58.885Z",
+    "mensaje": "Necesito ayuda",
+    "respuesta": "Estoy aquí para ayudarte. ¿Qué necesitas saber?"
+  },
+  {
+    "timestamp": "2025-11-27T13:46:37.560Z",
+    "mensaje": "¿Cuál es el precio?",
+    "respuesta": "Para información de precios, por favor contacta a nuestro equipo."
+  }
+]

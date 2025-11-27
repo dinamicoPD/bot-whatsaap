@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2025-11-27T12:19:33.414Z",
+    "mensaje": "hola, ¿como estas?",
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "timestamp": "2025-11-27T12:22:45.386Z",
+    "mensaje": "hola",
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "timestamp": "2025-11-27T12:22:45.389Z",
+    "mensaje": "buenos días",
+    "respuesta": "¡Hola! Soy un asistente virtual. ¿En qué puedo ayudarte?"
+  },
+  {
+    "timestamp": "2025-11-27T12:22:45.391Z",
+    "mensaje": "buenas tardes",
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  }
+]
