@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+.env
+.env.local
+.env.*.local
+.git
+.gitignore
+README.md
+.DS_Store
+.vscode
+*.log
+tokens/
+data/mensajes_entrantes.json
+data/usuarios.json
+test-*.js
+setup-*.js

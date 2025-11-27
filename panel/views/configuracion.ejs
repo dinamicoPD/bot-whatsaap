@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración del Bot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-light" data-config='<%- JSON.stringify(config) %>'>
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="mb-0">⚙️ Configuración del Bot</h1>
+      <a href="/" class="btn btn-secondary">← Panel Principal</a>
+    </div>
+
+    <div class="alert alert-info">
+      <h5>📱 Configuración del Número de Teléfono</h5>
+      <p>Ingresa el número de teléfono que estará conectado al bot de WhatsApp. Este debe ser el número que usarás para escanear el código QR.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">Configuración General</h5>
+          </div>
+          <div class="card-body">
+            <form id="configForm">
+              <div class="mb-3">
+                <label for="numero_telefono" class="form-label">
+                  📞 Número de Teléfono <span class="text-danger">*</span>
+                </label>
+                <input type="tel" class="form-control" id="numero_telefono"
+                       value="<%= config.numero_telefono || '' %>"
+                       placeholder="+573001234567"
+                       required>
+                <div class="form-text">
+                  Incluye el código de país (ej: +57 para Colombia, +1 para Estados Unidos)
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="nombre_bot" class="form-label">
+                  🤖 Nombre del Bot
+                </label>
+                <input type="text" class="form-control" id="nombre_bot"
+                       value="<%= config.nombre_bot || 'Asistente IA' %>"
+                       placeholder="Asistente IA">
+                <div class="form-text">
+                  Nombre que aparecerá en las respuestas del bot
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="idioma" class="form-label">
+                  🌍 Idioma
+                </label>
+                <select class="form-control" id="idioma">
+                  <option value="es" <%= config.idioma === 'es' ? 'selected' : '' %>>Español</option>
+                  <option value="en" <%= config.idioma === 'en' ? 'selected' : '' %>>English</option>
+                  <option value="pt" <%= config.idioma === 'pt' ? 'selected' : '' %>>Português</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="activo"
+                         <%= config.activo ? 'checked' : '' %>>
+                  <label class="form-check-label" for="activo">
+                    🚀 Bot Activo
+                  </label>
+                  <div class="form-text">
+                    Cuando está marcado, el bot responderá automáticamente a los mensajes
+                  </div>
+                </div>
+              </div>
+
+              <div class="alert alert-warning">
+                <h6>⚠️ Importante:</h6>
+                <ul class="mb-0">
+                  <li>El número debe estar registrado en WhatsApp</li>
+                  <li>Debes tener WhatsApp Web disponible para escanear el QR</li>
+                  <li>El bot se conectará a este número específicamente</li>
+                </ul>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer">
+            <button id="saveConfigBtn" class="btn btn-primary">
+              💾 Guardar Configuración
+            </button>
+            <button id="testConnectionBtn" class="btn btn-outline-info ms-2">
+              🔍 Probar Conexión
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h6 class="mb-0">Estado de Configuración</h6>
+          </div>
+          <div class="card-body">
+            <div class="mb-2">
+              <span class="badge <%= config.numero_telefono ? 'bg-success' : 'bg-warning' %>">
+                <%= config.numero_telefono ? '✅' : '⚠️' %> Número Configurado
+              </span>
+            </div>
+            <div class="mb-2">
+              <span class="badge <%= config.nombre_bot ? 'bg-success' : 'bg-secondary' %>">
+                <%= config.nombre_bot ? '✅' : '❌' %> Nombre Definido
+              </span>
+            </div>
+            <div class="mb-2">
+              <span class="badge <%= config.activo ? 'bg-success' : 'bg-secondary' %>">
+                <%= config.activo ? '🟢 Activo' : '🔴 Inactivo' %>
+              </span>
+            </div>
+
+            <% if (config.numero_telefono && config.nombre_bot) { %>
+              <div class="alert alert-success mt-3">
+                <small>🎉 Configuración completa. El bot está listo para funcionar.</small>
+              </div>
+            <% } else { %>
+              <div class="alert alert-warning mt-3">
+                <small>⚠️ Completa la configuración para activar el bot.</small>
+              </div>
+            <% } %>
+          </div>
+        </div>
+
+        <div class="card mt-3">
+          <div class="card-header">
+            <h6 class="mb-0">Instrucciones Rápidas</h6>
+          </div>
+          <div class="card-body">
+            <ol class="small mb-0">
+              <li>Ingresa tu número de teléfono</li>
+              <li>Guarda la configuración</li>
+              <li>Ejecuta el bot con <code>npm run bot</code></li>
+              <li>Escanea el QR en WhatsApp Web</li>
+              <li>¡El bot estará activo!</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const config = JSON.parse(document.body.getAttribute('data-config') || '{}');
+
+    // Guardar configuración
+    $('#saveConfigBtn').click(function() {
+      const configData = {
+        numero_telefono: $('#numero_telefono').val().trim(),
+        nombre_bot: $('#nombre_bot').val().trim(),
+        idioma: $('#idioma').val(),
+        activo: $('#activo').is(':checked'),
+        configuracion_completa: true
+      };
+
+      // Validación básica
+      if (!configData.numero_telefono) {
+        alert('Por favor ingresa un número de teléfono válido.');
+        return;
+      }
+
+      $.ajax({
+        url: '/api/configuracion',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(configData),
+        success: function() {
+          alert('✅ Configuración guardada correctamente.');
+          location.reload(); // Recargar para mostrar cambios
+        },
+        error: function() {
+          alert('❌ Error al guardar la configuración.');
+        }
+      });
+    });
+
+    // Probar conexión (simulado)
+    $('#testConnectionBtn').click(function() {
+      const numero = $('#numero_telefono').val().trim();
+      if (!numero) {
+        alert('Ingresa un número de teléfono primero.');
+        return;
+      }
+
+      alert(`📱 Para probar la conexión:\n\n1. Ejecuta: npm run bot\n2. Escanea el QR con WhatsApp Web\n3. El bot se conectará al número: ${numero}\n\nEsta función requiere que el bot esté ejecutándose.`);
+    });
+
+    // Formatear número de teléfono mientras se escribe
+    $('#numero_telefono').on('input', function() {
+      let value = $(this).val().replace(/\D/g, ''); // Solo números
+
+      // Agregar + al inicio si no lo tiene
+      if (value && !value.startsWith('+')) {
+        value = '+' + value;
+      }
+
+      // Formateo básico para números colombianos
+      if (value.startsWith('+57') && value.length > 3) {
+        if (value.length <= 6) {
+          value = value.slice(0, 3) + ' ' + value.slice(3);
+        } else {
+          value = value.slice(0, 3) + ' ' + value.slice(3, 6) + ' ' + value.slice(6);
+        }
+      }
+
+      $(this).val(value);
+    });
+  </script>
+</body>
+</html>

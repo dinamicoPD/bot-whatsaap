@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurar Respuestas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-light" data-responses='<%- JSON.stringify(respuestas) %>'>
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="mb-0">⚙️ Configurar Respuestas del Bot</h1>
+      <div>
+        <button id="addResponseBtn" class="btn btn-success me-2">➕ Agregar Respuesta</button>
+        <a href="/" class="btn btn-secondary">← Panel Principal</a>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      <h5>💡 Cómo funciona:</h5>
+      <p>Configura respuestas automáticas basadas en palabras clave. Si un mensaje contiene alguna de las palabras clave, el bot responderá automáticamente con el mensaje configurado.</p>
+    </div>
+
+    <div id="responsesContainer">
+      <% if (respuestas && Object.keys(respuestas).length > 0) { %>
+        <% Object.entries(respuestas).forEach(([categoria, config]) => { %>
+          <div class="card mb-3 response-card" data-category="<%= categoria %>">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="mb-0"><%= categoria.charAt(0).toUpperCase() + categoria.slice(1) %></h5>
+              <button class="btn btn-danger btn-sm delete-response" data-category="<%= categoria %>">🗑️ Eliminar</button>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label class="form-label">Palabras clave (separadas por comas):</label>
+                <input type="text" class="form-control keywords-input"
+                       value="<%= config.palabras_clave.join(', ') %>"
+                       placeholder="hola, buenos dias, etc.">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Respuesta automática:</label>
+                <textarea class="form-control response-input" rows="3"
+                          placeholder="Escribe la respuesta que enviará el bot"><%= config.respuesta %></textarea>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <div class="text-center text-muted py-5">
+          <h4>📝 No hay respuestas configuradas</h4>
+          <p>Haz clic en "Agregar Respuesta" para crear tu primera respuesta automática.</p>
+        </div>
+      <% } %>
+    </div>
+
+    <div class="text-center mt-4">
+      <button id="saveBtn" class="btn btn-primary btn-lg">💾 Guardar Cambios</button>
+    </div>
+  </div>
+
+  <!-- Modal para agregar nueva respuesta -->
+  <div class="modal fade" id="addResponseModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Agregar Nueva Respuesta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Nombre de la categoría:</label>
+            <input type="text" class="form-control" id="newCategoryName" placeholder="ej: saludos, despedidas">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Palabras clave (separadas por comas):</label>
+            <input type="text" class="form-control" id="newKeywords" placeholder="hola, buenos dias, etc.">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Respuesta automática:</label>
+            <textarea class="form-control" id="newResponse" rows="3" placeholder="Escribe la respuesta"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="addResponseConfirm">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let responses = JSON.parse(document.body.getAttribute('data-responses') || '{}');
+
+    // Agregar nueva respuesta
+    $('#addResponseBtn').click(function() {
+      $('#addResponseModal').modal('show');
+    });
+
+    $('#addResponseConfirm').click(function() {
+      const category = $('#newCategoryName').val().trim().toLowerCase();
+      const keywords = $('#newKeywords').val().split(',').map(k => k.trim()).filter(k => k);
+      const response = $('#newResponse').val().trim();
+
+      if (!category || keywords.length === 0 || !response) {
+        alert('Por favor completa todos los campos.');
+        return;
+      }
+
+      if (responses[category]) {
+        alert('Esta categoría ya existe.');
+        return;
+      }
+
+      responses[category] = {
+        palabras_clave: keywords,
+        respuesta: response
+      };
+
+      $('#addResponseModal').modal('hide');
+      $('#newCategoryName, #newKeywords, #newResponse').val('');
+      renderResponses();
+    });
+
+    // Eliminar respuesta
+    $(document).on('click', '.delete-response', function() {
+      const category = $(this).data('category');
+      if (confirm(`¿Eliminar la respuesta "${category}"?`)) {
+        delete responses[category];
+        renderResponses();
+      }
+    });
+
+    // Actualizar respuestas al cambiar inputs
+    $(document).on('input', '.keywords-input, .response-input', function() {
+      const card = $(this).closest('.response-card');
+      const category = card.data('category');
+      const keywords = card.find('.keywords-input').val().split(',').map(k => k.trim()).filter(k => k);
+      const response = card.find('.response-input').val().trim();
+
+      responses[category] = {
+        palabras_clave: keywords,
+        respuesta: response
+      };
+    });
+
+    // Guardar cambios
+    $('#saveBtn').click(function() {
+      $.ajax({
+        url: '/api/respuestas',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(responses),
+        success: function() {
+          alert('✅ Respuestas guardadas correctamente.');
+        },
+        error: function() {
+          alert('❌ Error al guardar las respuestas.');
+        }
+      });
+    });
+
+    // Renderizar respuestas
+    function renderResponses() {
+      let html = '';
+
+      if (Object.keys(responses).length > 0) {
+        Object.entries(responses).forEach(([categoria, config]) => {
+          html += `
+            <div class="card mb-3 response-card" data-category="${categoria}">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">${categoria.charAt(0).toUpperCase() + categoria.slice(1)}</h5>
+                <button class="btn btn-danger btn-sm delete-response" data-category="${categoria}">🗑️ Eliminar</button>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label">Palabras clave (separadas por comas):</label>
+                  <input type="text" class="form-control keywords-input"
+                         value="${config.palabras_clave.join(', ')}"
+                         placeholder="hola, buenos dias, etc.">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Respuesta automática:</label>
+                  <textarea class="form-control response-input" rows="3"
+                            placeholder="Escribe la respuesta que enviará el bot">${config.respuesta}</textarea>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      } else {
+        html = `
+          <div class="text-center text-muted py-5">
+            <h4>📝 No hay respuestas configuradas</h4>
+            <p>Haz clic en "Agregar Respuesta" para crear tu primera respuesta automática.</p>
+          </div>
+        `;
+      }
+
+      $('#responsesContainer').html(html);
+    }
+  </script>
+</body>
+</html>

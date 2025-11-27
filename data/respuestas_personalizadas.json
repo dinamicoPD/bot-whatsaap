@@ -1,0 +1,36 @@
+{
+  "saludos": {
+    "palabras_clave": [
+      "hola",
+      "buenos dias",
+      "buenas tardes",
+      "buenas noches"
+    ],
+    "respuesta": "¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?"
+  },
+  "despedidas": {
+    "palabras_clave": [
+      "adios",
+      "chau",
+      "hasta luego",
+      "nos vemos"
+    ],
+    "respuesta": "¡Hasta luego! Que tengas un excelente día. 😊"
+  },
+  "agradecimiento": {
+    "palabras_clave": [
+      "gracias",
+      "thank you",
+      "agradecido"
+    ],
+    "respuesta": "¡De nada! Estoy aquí para ayudarte. ¿Necesitas algo más?"
+  },
+  "prueba": {
+    "palabras_clave": [
+      "test",
+      "prueba",
+      "probar"
+    ],
+    "respuesta": "¡Esto es una prueba exitosa!"
+  }
+}

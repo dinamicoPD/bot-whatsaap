@@ -1,0 +1,34 @@
+{
+  "name": "whatsapp-ia-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"node bot-simulado.js\" \"node panel/app.js\"",
+    "panel": "node panel/app.js",
+    "bot": "node bot/index.js",
+    "bot:simulado": "node bot-simulado.js",
+    "test:messages": "node test-messages.js",
+    "test:real": "node test-real.js",
+    "test:gemini": "node test-gemini.js",
+    "setup": "node setup-example.js",
+    "setup:gemini": "node setup-gemini.js",
+    "verificar": "node verificar-deploy.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "dotenv": "^17.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "open": "^10.2.0",
+    "openai": "^5.10.1",
+    "venom-bot": "^5.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

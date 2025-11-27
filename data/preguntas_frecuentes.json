@@ -1,0 +1,18 @@
+[
+  {
+    "pregunta": "¿Cómo funciona el bot?",
+    "respuesta": "El bot responde automáticamente a tus mensajes usando inteligencia artificial. Solo envíale un mensaje y recibirás una respuesta útil."
+  },
+  {
+    "pregunta": "¿Qué tipo de preguntas puedo hacer?",
+    "respuesta": "Puedes hacer cualquier tipo de pregunta. El bot está diseñado para ayudar con información general, consejos y conversación cotidiana."
+  },
+  {
+    "pregunta": "¿El bot guarda mi información?",
+    "respuesta": "Sí, el bot guarda un historial de conversaciones para mejorar las respuestas futuras. Toda la información se almacena localmente."
+  },
+  {
+    "pregunta": "¿Cómo acceder al panel de administración?",
+    "respuesta": "El panel se abre automáticamente cuando inicias el bot. También puedes acceder en http://localhost:3000"
+  }
+]

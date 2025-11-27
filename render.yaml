@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: whatsapp-ia-bot
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: GEMINI_API_KEY
+        sync: false # Configurar manualmente en el panel
+      - key: OPENAI_API_KEY
+        sync: false # Configurar manualmente en el panel
