@@ -29,10 +29,11 @@ Esto verificará que la API key funciona correctamente.
 
 ### 3. Ejecutar el proyecto
 
-#### Opción A: Ejecutar todo junto (recomendado)
+#### Opción A: Ejecutar todo junto (recomendado - Bot Real + Panel)
 ```bash
 npm start
 ```
+**Ejecuta el bot real de WhatsApp + panel web**
 
 #### Opción B: Ejecutar solo el panel web
 ```bash

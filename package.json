@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"node bot-simulado.js\" \"node panel/app.js\"",
+    "start": "concurrently \"node bot/index.js\" \"node panel/app.js\"",
     "panel": "node panel/app.js",
     "bot": "node bot/index.js",
     "bot:simulado": "node bot-simulado.js",
