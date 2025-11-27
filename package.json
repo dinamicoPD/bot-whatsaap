@@ -13,7 +13,9 @@
     "test:gemini": "node test-gemini.js",
     "setup": "node setup-example.js",
     "setup:gemini": "node setup-gemini.js",
-    "verificar": "node verificar-deploy.js"
+    "setup:whatsapp": "node setup-whatsapp-business.js",
+    "verificar": "node verificar-deploy.js",
+    "whatsapp:api": "node whatsapp-business-api.js"
   },
   "keywords": [],
   "author": "",

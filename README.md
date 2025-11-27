@@ -340,3 +340,95 @@ docker run -p 3001:3001 \
 - La primera ejecución puede tomar tiempo mientras se configura la sesión de WhatsApp
 - Asegúrate de tener una conexión a internet estable
 - El bot solo responde en chats privados (no grupos)
+
+## 📡 WhatsApp Business API (Versión Oficial)
+
+Para producción a gran escala, puedes usar la **WhatsApp Business API oficial** que es más confiable y escalable.
+
+### ✅ Ventajas de WhatsApp Business API
+
+- **Oficial**: Aprobada por WhatsApp/Meta
+- **Escalable**: Sin límites de mensajes
+- **Confiable**: Sin problemas de navegador
+- **24/7**: Funciona en cualquier servidor
+- **Múltiples números**: Soporte para varios números
+
+### 🚀 Cómo Implementar WhatsApp Business API
+
+#### Paso 1: Elegir Proveedor Oficial
+
+**Proveedores recomendados:**
+- **360Dialog** (Más fácil de configurar)
+- **Twilio** (Más completo)
+- **MessageBird** (Europeo)
+
+#### Paso 2: Configurar Credenciales
+
+```bash
+# Ejecutar configuración automática
+npm run setup:whatsapp
+```
+
+Esto te guiará para:
+- Obtener Access Token
+- Configurar Phone Number ID
+- Establecer Verify Token
+
+#### Paso 3: Configurar Webhook
+
+Tu webhook URL será:
+```
+https://tu-dominio.com/webhook/whatsapp
+```
+
+Configúrala en tu proveedor de WhatsApp Business API.
+
+#### Paso 4: Ejecutar con API Oficial
+
+```bash
+# Ejecutar solo WhatsApp Business API
+npm run whatsapp:api
+
+# O integrar con el panel completo
+# (requiere configuración adicional)
+```
+
+### 🔧 Arquitectura WhatsApp Business API
+
+```
+Usuario WhatsApp → Proveedor → Webhook → Tu Servidor → Gemini AI → Respuesta → Usuario
+```
+
+### 💰 Costos Aproximados
+
+- **360Dialog**: $25/mes + costo por mensaje
+- **Twilio**: $20/mes + costo por mensaje
+- **MessageBird**: $15/mes + costo por mensaje
+
+### 📊 Comparación de Enfoques
+
+| Característica | Venom Bot | WhatsApp Business API |
+|----------------|-----------|----------------------|
+| **Facilidad** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| **Escalabilidad** | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Confiabilidad** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Costo inicial** | $0 | $15-25/mes |
+| **Configuración** | 5 minutos | 30-60 minutos |
+| **Límites** | Algunos | Ninguno |
+
+### 🎯 Recomendación
+
+- **Desarrollo/Pruebas**: Usa el bot simulado incluido
+- **Producción pequeña**: Railway con Venom Bot ($5/mes)
+- **Producción grande**: WhatsApp Business API (desde $15/mes)
+
+### 📞 ¿Necesitas Ayuda?
+
+Si quieres implementar WhatsApp Business API:
+
+1. **Elige proveedor**: 360Dialog es el más fácil
+2. **Ejecuta**: `npm run setup:whatsapp`
+3. **Configura webhook**: URL de tu servidor desplegado
+4. **¡Listo para producción!**
+
+¿Quieres que te ayude con la configuración específica de algún proveedor?
